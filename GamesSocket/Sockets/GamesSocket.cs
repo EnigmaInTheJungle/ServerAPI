@@ -45,6 +45,7 @@ namespace GamesAPI.Sockets
         {
             Game newGame = new Game(game.ToObject<Game>(), server.Port.ToString());
             gameDAO.Add(newGame);
+            GamesAPI.gamesData.Add(newGame.Id, new GameState());
             server.AddWebSocketService("/Game/" + newGame.Id, () => new GameSocket(newGame, gameDAO));
             SendBack(GameActions.GAME_CREATED, newGame);
         }
