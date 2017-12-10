@@ -12,7 +12,7 @@ namespace UsersAPI.DAO
     {
         List<User> All { get; }
         void Create(User user);
-
-        void SetUserStatus(int id, bool online);
+        User Get(int id);
+        User Get(string name);
     }
 }

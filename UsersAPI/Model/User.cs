@@ -12,8 +12,7 @@ namespace UsersAPI.Model
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool Online { get; set; }
-        public string SessionId { get; set; }
+        public string Password { get; set; }
 
         public User()
         {
@@ -23,16 +22,14 @@ namespace UsersAPI.Model
         public User(User user)
         {
             Name = user.Name;
-            Online = user.Online;
-            SessionId = user.SessionId;
+            Password = user.Password;
             Id = ++count;
         }
 
-        public User(string name, bool online, string sessionId)
+        public User(string name, string password)
         {
             Name = name;
-            Online = online;
-            SessionId = sessionId;
+            Password = password;
             Id = ++count;
         }
     }
