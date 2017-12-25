@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\GameActions.cs" />
+    <Compile Include="DAO\GameDAO_MOCK.cs" />
     <Compile Include="DAO\IGameDAO.cs" />
     <Compile Include="Model\GameState.cs" />
     <Compile Include="Model\Game.cs" />
@@ -59,6 +60,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

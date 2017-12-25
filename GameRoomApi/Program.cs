@@ -11,12 +11,14 @@ namespace GameRoomApi
     {
         static void Main(string[] args)
         {
+            APIModeFactory apiFactory = new APIModeFactory(APIModeFactory.APIMode.RealJob);
+
             var socket = new WebSocketServer("ws://localhost:8888/");
             GamesAPI.GamesAPI gamesAPI = new GamesAPI.GamesAPI();
             UsersAPI.UsersAPI usersAPI = new UsersAPI.UsersAPI();
 
-            gamesAPI.AttachAPI(socket, new GamesAPI.DAO.GameDAO(), "/Games");
-            usersAPI.AttachAPI(socket, new UsersAPI.DAO.UserDAO(), "/Users");
+            gamesAPI.AttachAPI(socket, apiFactory.GetGameDAO(), "/Games");
+            usersAPI.AttachAPI(socket, apiFactory.GetUserDAO(), "/Users");
 
             socket.Start();
 

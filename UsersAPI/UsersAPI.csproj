@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\UserActions.cs" />
+    <Compile Include="DAO\UserDAO_MOCK.cs" />
     <Compile Include="UsersAPI.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\IUserDAO.cs" />
